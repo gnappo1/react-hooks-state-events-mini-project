@@ -1,10 +1,12 @@
 import React from "react";
+//! PROPS ARE ALWAYS PASSED AS AN OBJECT
+function CategoryFilter({ categories, selectedCategory, handleCategorySelection }) {
+  const mappedCategories = categories.map((category, index) => <button className={category === selectedCategory ? "selected" : ""} onClick={handleCategorySelection} key={index}>{category}</button>)
 
-function CategoryFilter() {
   return (
     <div className="categories">
       <h5>Category filters</h5>
-      {/* render <button> elements for each category here */}
+      {mappedCategories}
     </div>
   );
 }
